@@ -10,6 +10,8 @@ resource "aws_cloudfront_distribution" "resume" {
   comment             = "Cloud Resume Challenge"
   default_root_object = "index.html"
 
+  aliases = [var.domain_name]
+
   origin {
     domain_name              = aws_s3_bucket.resume.bucket_regional_domain_name
     origin_id                = "resume-s3-origin"
@@ -42,6 +44,8 @@ resource "aws_cloudfront_distribution" "resume" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn      = aws_acm_certificate.resume.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
   }
 }
