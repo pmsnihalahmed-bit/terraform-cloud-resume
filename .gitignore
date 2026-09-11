@@ -1,0 +1,27 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfplan
+
+# Terraform variable files
+*.tfvars
+*.tfvars.json
+
+# Lambda/build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.zip
+
+# Python virtual environments
+.venv/
+venv/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
