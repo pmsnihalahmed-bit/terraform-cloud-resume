@@ -11,3 +11,8 @@ output "cloudfront_domain_name" {
   description = "CloudFront distribution domain name"
   value       = aws_cloudfront_distribution.resume.domain_name
 }
+output "api_url" {
+  description = "Base URL for the visitor counter API"
+  value       = aws_apigatewayv2_stage.default.invoke_url
+}
+
