@@ -15,4 +15,7 @@ output "api_url" {
   description = "Base URL for the visitor counter API"
   value       = aws_apigatewayv2_stage.default.invoke_url
 }
-
+output "github_actions_role_arn" {
+description = "IAM role ARN assumed by Github Actions."
+value = aws_iam_role.github_actions.arn
+}

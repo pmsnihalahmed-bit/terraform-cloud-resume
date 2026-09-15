@@ -11,4 +11,7 @@ variable "domain_name" {
   description = "Custom domain name for the resume website"
   type        = string
 }
-
+variable "github_repository" {
+  description = "Github Respository in owner/repository format"
+  type        = string
+}
