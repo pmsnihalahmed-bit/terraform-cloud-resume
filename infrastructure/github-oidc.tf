@@ -29,7 +29,7 @@ resource "aws_iam_role" "github_actions" {
             "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
           }
           StringLike = {
-            "token.actions.githubusercontent.com:sub" = "repo:${var.github_repository}:ref:refs/heads/master"
+            "token.actions.githubusercontent.com:sub" = "repo:pmsnihlahmed-bit@313890048/terraform-cloud-resume@1365384584:ref:refs/heads/master"
           }
         }
       }
