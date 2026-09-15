@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: ap-south-1
+  AWS_REGION: ap-south-2
   S3_BUCKET: nihal-terraform-cloud-resume-2026
   CLOUDFRONT_DISTRIBUTION_ID: "E39637LJKLKK0B"
   LAMBDA_FUNCTION_NAME: visitor-counter
