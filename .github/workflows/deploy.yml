@@ -38,6 +38,7 @@ jobs:
         working-directory: lambda
         env:
           TABLE_NAME: visitor_counter
+          AWS_DEFAULT_REGION: ap-south-2
         run: pytest
 
   deploy:
