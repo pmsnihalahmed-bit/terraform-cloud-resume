@@ -7,7 +7,7 @@ table = dynamodb.Table(os.environ["TABLE_NAME"])
 
 def lambda_handler(event, context):
     response = table.update_item(
-            key={
+            Key={
                 "id": "visitors"
                 },
             UpdateExpression="ADD visit_count :increment",
@@ -15,14 +15,15 @@ def lambda_handler(event, context):
                 ":increment": 1
                 },
             ReturnValues="UPDATED_NEW"
-        )
-        count = int(response["Attributes"]["visit_count"]
-        return {
-            "statusCode": 200,
-            "headers": {
-                "Content-Type": "application/json"
-                },
-            "body": json.dumps({
-                "count": count
-                })
-            }
+            )
+    count = int(response["Attributes"]["visit_count"])
+
+    return {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json"
+            },
+        "body": json.dumps({
+            "count": count
+            })
+        }
